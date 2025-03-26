@@ -20,15 +20,14 @@ model Team {
 }
 
 model Player {
-  id              Int    @id @default(autoincrement())
-  player_name     String
-  points_avg   Float
-  assists_avg  Float
-   rebounds_avg Float
-  steals_avg   Float?
-  blocks_avg   Float?
-  finals_played   Int?
-  finals_won      Int?
-  teams           Team[] @relation("TeamPlayers")
+  id            Int    @id @default(autoincrement())
+  player_name   String @unique
+  points_avg    Float
+  assists_avg   Float
+  rebounds_avg  Float
+  steals_avg    Float?
+  blocks_avg    Float?
+  finals_played Int?
+  finals_won    Int?
+  teams         Team[] @relation("TeamPlayers")
 }
-

@@ -1,0 +1,1 @@
+to test my functions in prismaFunctions while in the main file I use node src/prismaFunctions/prisma.js  

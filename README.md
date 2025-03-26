@@ -56,7 +56,16 @@ Make sure your database is running and accessible.
 
 ---
 
-### 5. Start the Server
+### 5. Seed the Database
+
+You must seed the database with player data before using the API:
+
+```bash
+npm run seed:teams
+npm run seed:players
+```
+
+### 6. Start the Server
 
 ```bash
 npm start

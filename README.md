@@ -20,7 +20,7 @@ An Express + Prisma backend API powering the **Guess That NBA Player** game. It 
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/guess-that-nba-player-backend.git
+git clone https://github.com/MikealFowler/Guess-that-nba-player-backendGuess-that-nba-player-backend.git
 cd guess-that-nba-player-backend
 ```
 

@@ -4,24 +4,24 @@ const prisma = new PrismaClient();
 
 async function allPlayers() {
     const players = await prisma.player.findMany()
-    console.log(players)
-
+    // console.log(players)
+    return players;
 }
 
-async function onePlayer() {
+async function onePlayer(id) {
     const player = await prisma.player.findUnique({
         where: {
-            id: 1
+            id: id
         }
     })
-    console.log(player)
-
+    //  console.log(player)
+    return player;
 }
 
 async function getRandomPlayer() {
     const allPlayers = await prisma.player.findMany();
     const randomPlayer = allPlayers[Math.floor(Math.random() * allPlayers.length)];
-    console.log(randomPlayer);
+    //  console.log(randomPlayer);
     return randomPlayer;
 }
 

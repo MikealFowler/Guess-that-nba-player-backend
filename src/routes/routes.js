@@ -1,12 +1,35 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const router = express.Router();
 const port = 3000
-const { getRandomPlayer, getPlayerById } = require('../prismaFunctions/playerFunctions');
+const { getRandomPlayer, onePlayer, allPlayers } = require('../utils/playerFunctions.js');
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+router.get('/randomplayer', async (req, res) => {
+    try {
+        const player = await getRandomPlayer();
+        res.send(player);
+    } catch (error) {
+        console.log(error)
+    }
+
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+router.get('/player/:id', async (req, res) => {
+    try {
+        const id = parseInt(req.params.id)
+        const player = await onePlayer(id);
+        res.send(player);
+    } catch (error) {
+        console.log(error)
+    }
 })
+
+router.get('/allplayers', async (req, res) => {
+    try {
+        const players = await allPlayers();
+    res.send(players);
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+module.exports = router;

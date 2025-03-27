@@ -76,20 +76,6 @@ The API will be running at:
 
 ---
 
-## 🧪 Running Tests
-
-To run the Jest test suite:
-
-```bash
-npm test
-```
-
-Tests cover:
-- `GET /api/randomplayer`
-- `GET /api/allplayers`
-- `GET /api/player/:id` (with 404 handling)
-
----
 
 ## 📘 API Endpoints
 
@@ -101,14 +87,6 @@ Tests cover:
 
 ---
 
-## 💡 Future Improvements
-
-- Add rate limiting or auth if deployed publicly
-- Enhance data validation and error handling
-- Add filtering or search routes
-- Write unit tests for raw utility functions
-
----
 
 ## 👨‍💼 Author
 

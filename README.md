@@ -76,6 +76,17 @@ The API will be running at:
 
 ---
 
+---
+## 🐳 Run the Backend with Docker
+
+To run the backend in a Docker container first make sure you cloned the repo then:
+
+### 1. in the root Directory:
+```bash
+docker compose up
+```
+---
+
 
 ## 📘 API Endpoints
 

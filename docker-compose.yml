@@ -11,8 +11,6 @@ services:
     environment:
       DATABASE_URL: postgresql://postgres:admin@db:5432/guess-db?schema=public
     command: ./wait-for-db.sh
-    volumes:
-      - .:/app
 
   db:
     container_name: guess-db

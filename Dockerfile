@@ -4,12 +4,16 @@ FROM node:18
 # Create app directory
 WORKDIR /app
 
+RUN apt-get update && apt-get install -y netcat-openbsd
+
 # Copy dependencies
-COPY package*.json ./
+COPY package*.json .
 RUN npm install
 
 # Copy the rest of your code
 COPY . .
+
+RUN chmod +x wait-for-db.sh
 
 # Build Prisma client
 RUN npx prisma generate
@@ -19,4 +23,4 @@ RUN npx prisma generate
 EXPOSE 3000
 
 # Start app
-CMD ["npm", "start"]
+CMD ["./wait-for-db.sh"]
